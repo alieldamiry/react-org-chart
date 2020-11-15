@@ -1,23 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
+import { Tree, TreeNode } from 'react-organizational-chart';
+import Card from './Card';
 
-function App() {
+
+const App = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Tree label={<div>Root</div>}>
+        <TreeNode label={<div>Child 1</div>}>
+        </TreeNode>
+        <TreeNode label={<div>Child 2</div>}>
+          <TreeNode label={<Card />}>
+            <TreeNode label={<Card />} />
+            <TreeNode label={<Card />} />
+            <TreeNode label={<Card />} />
+          </TreeNode>
+          <TreeNode label={<Card />} />
+        </TreeNode>
+      </Tree>
     </div>
   );
 }
